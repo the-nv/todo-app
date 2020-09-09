@@ -1,4 +1,6 @@
 class TodoItemsController < ApplicationController
+    http_basic_authenticate_with name: "scaler", password: "scaler", only: [:destroy, :complete]
+
     def create
         @todo_list = TodoList.find(params[:todo_list_id])
         @todo_item = @todo_list.todo_items.create(todo_item_params)

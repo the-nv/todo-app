@@ -1,4 +1,6 @@
 class TodoListsController < ApplicationController
+    http_basic_authenticate_with name: "scaler", password: "scaler", except: [:index, :show]
+
     def index
         @todo_list = TodoList.all
     end
