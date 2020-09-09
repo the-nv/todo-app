@@ -28,6 +28,6 @@ class TodoItemsController < ApplicationController
 
     private
         def todo_item_params
-            params.require(:todo_item).permit(:content)
+            params.require(:todo_item).permit(:content, :due_at, :priority)
         end
 end

@@ -10,7 +10,7 @@
 </p>
 
 <h2>Todo Items</h2>
-<%= render @todo_list.todo_items%>
+<%= render @todo_list.todo_items.order('priority DESC') %>
 
 <h2>Add a Todo Item</h2>
 <%= render 'todo_items/form' %>

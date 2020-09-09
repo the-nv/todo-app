@@ -5,6 +5,14 @@
     </p>
 
     <p>
+        Date and Time:
+        <%= form.datetime_field :due_at %>
+    </p>
+
+    <p>
+        Priority
+        <%= form.number_field :priority%>
+    <p>
         <%= form.submit %>
     </p>
 <% end %>
