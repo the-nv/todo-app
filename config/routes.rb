@@ -2,7 +2,11 @@ Rails.application.routes.draw do
   get 'homepage/index'
 
   resources :todo_lists do
-    resources :todo_items
+    resources :todo_items do
+      member do
+        patch :complete
+      end
+    end
   end
 
   root 'homepage#index'

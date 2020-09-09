@@ -1,6 +1,12 @@
 <p>
-    <strong>Content: </strong>
-    <%= todo_item.content %>
+    <% if todo_item.completed_at? %>
+        <strong>Content:</strong>
+        <%= todo_item.content %>
+    <% else %>
+        <strong>Content:</strong>
+        <%= todo_item.content %>
+        <%= link_to 'Mark as Complete', complete_todo_list_todo_item_path(@todo_list, todo_item.id), method: :patch %>
+    <% end %>
 </p>
 
 <p>
