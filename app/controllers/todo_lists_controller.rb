@@ -1,17 +1,23 @@
 class TodoListsController < ApplicationController
+    def index
+        @todo_list = TodoList.all
+    end
     def show
         @todo_list = TodoList.find(params[:id])
     end
 
     def new
-
+        @todo_list = TodoList.new
     end
 
     def create
         @todo_list = TodoList.new(todo_list_params)
 
-        @todo_list.save
-        redirect_to @todo_list
+        if @todo_list.save
+            redirect_to @todo_list
+        else
+            render 'new'
+        end
     end
 
     private

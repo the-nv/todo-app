@@ -1,0 +1,19 @@
+<%= link_to 'New', new_todo_list_path %>
+
+<h1>Todo Lists</h1>
+ 
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th></th>
+  </tr>
+ 
+  <% @todo_list.each do |todo_list| %>
+    <tr>
+      <td><%= todo_list.title %></td>
+      <td><%= todo_list.description %></td>
+      <td><%= link_to 'show', todo_list_path(todo_list) %></td>
+    </tr>
+  <% end %>
+</table>
